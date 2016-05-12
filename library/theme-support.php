@@ -31,8 +31,8 @@ function foundationpress_theme_support() {
     
     // Add Custom Thumbnail Sizes
     if ( function_exists( 'add_image_size' ) ) {
-        add_image_size( 'wxga-full-size', 2560, 1600, true); // 16:10 Ratio
-        add_image_size( 'wxga-thumbnail', 960, 600, true); // 16:10 Ratio
+        add_image_size( 'project-full-size', 2560, 1440, true); // 16:9 Ratio
+        add_image_size( 'project-thumbnail', 640, 360, true); // 16:9 Ratio
         add_image_size( 'header-image', 2000, 800, true ); // 2.5:1 Ratio
         add_image_size( 'header-thumbnail', 500, 200, true); // 2.5:1 Ratio
         add_image_size( 'bar-image', 1200, 438, true ); // 2.75:1 Ratio

@@ -10,24 +10,28 @@
 
 get_header(); ?>
 
+<div class="project-archive">
+
 <?php
 
 // check if the repeater field has rows of data
 if( have_rows('project_classification_order', 'option') ):
     while ( have_rows('project_classification_order', 'option') ) : the_row();
+
+        // Define Project Classification Object
+        $project_classification = get_sub_field('project_classification');
         
-        // Display Project Classification Description if Available
-        if (get_sub_field( 'project_classification_description' )) {
-            echo '<div class="column row">';
-            echo get_sub_field( 'project_classification_description' );
-            echo '</div>';
-        }
+        echo '<div class="column row">';
+            echo '<h5>' . get_term( $project_classification, 'project_classification')->name . '</h5>';
+
+            // Display Project Classification Description if Available
+            if (get_sub_field( 'project_classification_description' )) {
+                echo get_sub_field( 'project_classification_description' );
+            }
+        echo '</div>';
 
         // Start Block Grid
         echo '<div class="row medium-up-4">';
-        
-        // Define Project Classification Object
-        $project_classification = get_sub_field('project_classification');
 
         // Query Projects in Particular Project Classificaiton
         $the_query = new WP_Query( array (
@@ -41,8 +45,13 @@ if( have_rows('project_classification_order', 'option') ):
                 $the_query->the_post();
                 
                 echo '<div class="column">';
-                echo get_the_post_thumbnail($post, 'header-thumbnail');
-                echo get_the_title();
+                
+                if (has_post_thumbnail($post)) {
+                    echo get_the_post_thumbnail($post, 'header-thumbnail');
+                } else {
+                    echo '<img src="http://placehold.it/640x360">';
+                }
+                echo '<h4>' . get_the_title() . '</h4>';
                 echo '</div>';
             }
         } else {
@@ -55,5 +64,7 @@ if( have_rows('project_classification_order', 'option') ):
         echo '</div>';
 
     endwhile; else : endif; ?>
+    
+</div>
 
 <?php get_footer(); ?>
