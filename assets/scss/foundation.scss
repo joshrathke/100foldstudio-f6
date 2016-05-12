@@ -17,6 +17,9 @@
 @import "global/wp-admin"; // Fix issues with wp-admin bar positioning
 @import "global/wp-overrides"; // Override the default WordPress styling for some elements
 
+// Mixins
+@import "global/mixins"; // Include all mixins
+
 // Third-party libraries
 @import 'font-awesome';
 @import 'motion-ui';
@@ -85,11 +88,12 @@
 @import "components/featured-image";
 @import "components/dividers";
 @import "components/links";
+@import "components/fonts";
+@import "components/headings";
 
 // Templates
-@import "templates/front";
-@import "templates/kitchen-sink";
 @import "templates/page-default";
 @import "templates/page-sidebar-left";
 @import "templates/page-full-width";
 @import "templates/single-post";
+@import "templates/page-front";

@@ -39,7 +39,11 @@
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 			<div class="top-bar-left">
 				<ul class="menu">
-					<li class="home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+					<li class="home">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gray_on_white_linear.png" />
+                        </a>
+                    </li>
 				</ul>
 			</div>
 			<div class="top-bar-right">

@@ -28,6 +28,25 @@ function foundationpress_theme_support() {
 
 	// Add post thumbnail support: http://codex.wordpress.org/Post_Thumbnails
 	add_theme_support( 'post-thumbnails' );
+    
+    // Add Custom Thumbnail Sizes
+    if ( function_exists( 'add_image_size' ) ) {
+        add_image_size( 'wxga-full-size', 2560, 1600, true); // 16:10 Ratio
+        add_image_size( 'wxga-thumbnail', 960, 600, true); // 16:10 Ratio
+        add_image_size( 'header-image', 2000, 800, true ); // 2.5:1 Ratio
+        add_image_size( 'header-thumbnail', 500, 200, true); // 2.5:1 Ratio
+        add_image_size( 'bar-image', 1200, 438, true ); // 2.75:1 Ratio
+    }
+    
+    // Add Custom Thumbnail Sizes to "Add Media" Modal
+    add_filter('image_size_names_choose', 'custom_image_sizes_choose');
+    function custom_image_sizes_choose($sizes) {
+        $custom_sizes = array(
+            "header-image"  => __( "Header Image (2.5:1)" ),
+            "bar-image"     => __( "Bar Image (2.75:1)" ),
+        );
+        return array_merge($sizes, $custom_sizes);
+    }
 
 	// RSS thingy
 	add_theme_support( 'automatic-feed-links' );

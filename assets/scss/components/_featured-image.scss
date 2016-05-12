@@ -5,7 +5,7 @@
 		background-repeat: no-repeat;
 		margin: 0 0 rem-calc(32);
 		position: relative;
-		height: rem-calc(200);
+		height: rem-calc(300);
 		}
 
 		.no-featured-image-set {
@@ -17,4 +17,22 @@
 	#featured-hero {
 		height: rem-calc(400);
 		}
+}
+
+@include breakpoint(large) {
+	#featured-hero {
+		height: rem-calc(450);
+		}
+}
+
+@include breakpoint(xlarge) {
+    #featured-hero {
+        height: rem-calc(500);
+    }
+}
+
+@include breakpoint(xxlarge) {
+    #featured-hero {
+        height: rem-calc(550);
+    }
 }

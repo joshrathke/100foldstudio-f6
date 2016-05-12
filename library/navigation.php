@@ -10,6 +10,8 @@
 register_nav_menus(array(
 	'top-bar-r'  => 'Right Top Bar',
 	'mobile-nav' => 'Mobile',
+    'join-us'    => 'Join Us',
+    'copyright-bar' => 'Copyright Bar',
 ));
 
 
@@ -46,6 +48,40 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 			'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
 			'fallback_cb'    => false,
 			'walker'         => new Foundationpress_Mobile_Walker(),
+		));
+	}
+}
+
+/**
+ * Join Us Menu - Down in the Footer
+ */
+if ( ! function_exists( '_100foldstudio_join_us_nav' ) ) {
+	function _100foldstudio_join_us_nav() {
+		wp_nav_menu( array(
+			'container'      => false,                         // Remove nav container
+			'menu'           => __( 'join-us', 'foundationpress' ),
+			'menu_class'     => '',
+			'theme_location' => 'join-us',
+			'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
+			'fallback_cb'    => false,
+            'depth'          => 1,
+		));
+	}
+}
+
+/**
+ * Copyright Bar - Below the Footer
+ */
+if ( ! function_exists( '_100foldstudio_copyright_bar_nav' ) ) {
+	function _100foldstudio_copyright_bar_nav() {
+		wp_nav_menu( array(
+			'container'      => false,                         // Remove nav container
+			'menu'           => __( 'copyright-bar', 'foundationpress' ),
+			'menu_class'     => '',
+			'theme_location' => 'copyright-bar',
+			'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
+			'fallback_cb'    => false,
+            'depth'          => 1,
 		));
 	}
 }

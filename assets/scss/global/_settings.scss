@@ -49,8 +49,8 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #2199e8,
-  secondary: #777,
+  primary: #7ACDD8,
+  secondary: #ff8d00,
   success: #3adb76,
   warning: #ffae00,
   alert: #ec5840,
@@ -380,7 +380,7 @@ $menu-margin: 0;
 $menu-margin-nested: 1rem;
 $menu-item-padding: 0.7rem 1rem;
 $menu-item-color-active: $white;
-$menu-item-background-active: #121212;
+$menu-item-background-active: white;
 $menu-icon-spacing: 0.25rem;
 
 // 23. Meter
@@ -535,12 +535,12 @@ $thumbnail-radius: $global-radius;
 // 34. Title Bar
 // -------------
 
-$titlebar-background: $black;
+$titlebar-background: white;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
 $titlebar-icon-color: $white;
-$titlebar-icon-color-hover: $medium-gray;
+$titlebar-icon-color-hover: white;
 $titlebar-icon-spacing: 0.25rem;
 
 // 35. Tooltip
@@ -558,7 +558,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0;
-$topbar-background: #121212;
+$topbar-background: white;
 $topbar-submenu-background: $topbar-background;
 $topbar-link-color: #fff;
 $topbar-input-width: 200px;

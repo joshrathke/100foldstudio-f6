@@ -47,5 +47,56 @@ require_once( 'library/sticky-posts.php' );
 /** Configure responsive image sizes */
 require_once( 'library/responsive-images.php' );
 
-/** If your site requires protocol relative url's for theme assets, uncomment the line below */
-// require_once( 'library/protocol-relative-theme-assets.php' );
+/**
+ *  Register Custom Post Types
+ *  This section registers all of the custom post types we need,
+ *  along with all of their functions.
+ */
+require_once( 'library/custom_post_types/project_cpt.php');
+
+/**
+ *  Register Custom Taxonomies
+ *  This section registers all of the custom taxonomies we use
+ *  for the theme along with any functions they require.
+ */
+require_once( 'library/custom_taxonomies/project_classification_tax.php' );
+
+/**
+ *  Register Options Page
+ *  This registers the Theme options page using the Advanced
+ *  Custom Fields plugin.
+ */
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page( array(
+        'page_title' => 'Theme Options',
+        'icon_url'   => 'dashicons-forms',
+    ));
+}
+
+/*	Function Get Excerpt By ID
+ *	This function allows us to get the excerpt of a
+ *	post by the ID of the post, and also allows a
+ *	word count to be passed to allow for excerpt length
+ *	variability.
+ */
+function get_excerpt_by_id( $post_id, $excerpt_length = 40, $echo_link = false, $link_text = 'View Post' )
+{
+	$the_post = get_post( $post_id ); //Gets post ID
+	$the_permalink = get_permalink( $post_id );
+	$the_excerpt = $the_post->post_content; //Gets post_content to be used as a basis for the excerpt
+	$the_excerpt = strip_tags( strip_shortcodes( $the_excerpt ) ); //Strips tags and images
+	$words = explode( ' ', $the_excerpt, $excerpt_length + 1 );
+	if ( count( $words ) > $excerpt_length ) :
+		array_pop( $words );
+		array_push( $words, '[…]' );
+		$the_excerpt = implode( ' ', $words );
+		if ( $echo_link ) {
+			$the_excerpt .= "<a href='{$the_permalink}'>{$link_text}</a>";
+		}
+	endif;
+	$the_excerpt = '<p>' . $the_excerpt . '</p>';
+	return $the_excerpt;
+}
+
+?>

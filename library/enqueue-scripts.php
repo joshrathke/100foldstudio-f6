@@ -24,6 +24,9 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	// If you'd like to cherry-pick the foundation components you need in your project, head over to gulpfile.js and see lines 35-54.
 	// It's a good idea to do this, performance-wise. No need to load everything if you're just going to use the grid anyway, you know :)
 	wp_enqueue_script( 'foundation', get_template_directory_uri() . '/assets/javascript/foundation.js', array('jquery'), '2.6.1', true );
+        
+    // Add Parallax.js
+    wp_enqueue_script( 'parallax.js', get_template_directory_uri() . '/assets/components/parallax.js/parallax.js', array('jquery'), '1.4.2', false);
 
 	// Add the comment-reply library on pages where it is necessary
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

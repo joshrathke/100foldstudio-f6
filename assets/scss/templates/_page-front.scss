@@ -1,0 +1,130 @@
+.fsv-container {
+    height: 100vh;
+    position: relative;
+    top: -58px;
+    
+    .full-screen-video {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+
+            @media (min-aspect-ratio: 16/9) {
+                width: 100%;
+                height: auto;
+            }
+
+            @media (max-aspect-ratio: 16/9) {
+                width: auto;
+                height: 100%;
+
+                @media (min-aspect-ratio: 16/9) {
+                    height: 300%;
+                    top: -100%;
+                }
+
+                @media (max-aspect-ratio: 16/9) {
+                    width: 300%;
+                    left: -100%;
+                }
+            }
+        }
+
+        .fsv-content-container {
+            color: white;
+            font-size: 36px;
+            font-family: 'Century Gothic W01';
+            margin: 0px auto;
+            text-align: center;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 20%;
+            width: 360px;
+            
+            img {
+                width: 190px;
+                margin-bottom: 30px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            a {
+              border: 1px solid white;
+              color: white;
+                font-family:'Century Gothic W01';
+              font-size: 18px;
+              padding: 8px 24px;
+            }
+        }
+    }
+}
+
+.opening-statement {
+    padding-top: 20px;
+    
+    h1 {
+        font-size: 2.5rem;    
+    }
+    
+    p {
+        color: #666;
+        font-weight: 200;
+        font-size: 20px;
+    }
+}
+
+.whats-new {
+    padding-top: 80px;
+    
+    h4 {
+        margin-top: 20px;
+    }
+    
+    .section-container {
+        padding-bottom: 60px;
+        position: relative;
+    
+        .button {
+            position: absolute;
+            bottom: 0px;
+            right: .9375rem;
+            left: .9375rem;
+        }
+    }
+}
+
+.front-page-content-section {
+    padding-top: 80px;
+}
+
+// Full Width Parralax Section
+.full-width-parralax {
+    margin-top: 100px;
+    @include background-size(cover !important);
+    height: 320px;
+    
+    h2 {
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        text-shadow: 0px 0px 40px rgba(0, 0, 0, .8);
+    }
+}
+
+.project-description {
+    padding-top: 100px;
+    margin-bottom: 100px;
+}

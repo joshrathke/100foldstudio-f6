@@ -1,0 +1,67 @@
+h1 {
+    color: $secondary_color;
+    font-family:"Century Gothic W01";
+    letter-spacing: .6rem;
+    text-transform: uppercase;
+    
+    @include breakpoint(medium only) {
+        font-size: 2rem;
+    }
+}
+
+h2 {
+    color: $primary_color;
+    font-family:"Century Gothic W01";
+    letter-spacing: .6rem;
+    text-transform: uppercase;
+    
+    @include breakpoint(medium only) {
+        font-size: 1.7rem;
+    }
+}
+
+h3 {
+    color: #444444;
+    font-family:"Century Gothic W01";
+    letter-spacing: .6rem;
+    text-transform: uppercase;
+    
+    @include breakpoint(medium only) {
+        font-size: 1.4rem;
+    }
+}
+
+h4 {
+    color: #444444;
+    font-family:"Century Gothic W01";
+    font-weight: bold;
+    font-size: 1.4rem;
+    
+    @include breakpoint(medium only) {
+        font-size: 1.2rem;
+    }
+}
+
+h5 {
+    color: $primary_color;
+    font-family:"Century Gothic W01";
+    font-weight: bold;
+    font-size: 1.4rem;
+    
+    @include breakpoint(medium only) {
+        font-size: 1.2rem;
+    }
+}
+
+h6 {
+    color: #444444;
+    font-family:"Century Gothic W01";
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    
+    @include breakpoint(medium only) {
+        font-size: 1rem;
+    }
+}
