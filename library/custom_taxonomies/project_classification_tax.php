@@ -19,7 +19,7 @@ function project_classification_tax() {
         'update_item'       => __( 'Update Classification' ),
         'add_new_item'      => __( 'Add New Classification' ),
         'new_item_name'     => __( 'New Classification Name' ),
-        'menu_name'         => __( 'Classification' ),
+        'menu_name'         => __( 'All Classifications' ),
     );
     $args = array(
         'hierarchical'      => true,

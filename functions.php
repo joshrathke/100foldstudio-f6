@@ -59,7 +59,9 @@ require_once( 'library/custom_post_types/project_cpt.php');
  *  This section registers all of the custom taxonomies we use
  *  for the theme along with any functions they require.
  */
-require_once( 'library/custom_taxonomies/project_classification_tax.php' );
+require_once( 'library/custom_taxonomies/project_classification_tax.php' ); // Project Classification
+require_once( 'library/custom_taxonomies/project_continent_tax.php' ); // Project Continent
+require_once( 'library/custom_taxonomies/project_country_tax.php' ); // Project Country
 
 /**
  *  Register Options Page

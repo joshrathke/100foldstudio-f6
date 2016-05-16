@@ -10,6 +10,13 @@
 
 get_header(); ?>
 
+<script type="text/javascript" src="https://maps.google.com/maps/api/js"></script>
+<script type="text/javascript" src="<?php echo get_bloginfo( 'template_directory' ); ?>/assets/javascript/custom/infobox.js"></script>
+
+
+<div id="projects-map"></div>
+
+
 <div class="project-archive">
 
 <?php

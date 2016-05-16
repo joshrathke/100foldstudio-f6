@@ -13,7 +13,7 @@ function projects_cpt_init() {
 		'singular_name'      => _x( 'Project', 'post type singular name', '100foldstudio' ),
 		'menu_name'          => _x( 'Projects', 'admin menu', '100foldstudio' ),
 		'name_admin_bar'     => _x( 'Project', 'add new on admin bar', '100foldstudio' ),
-		'add_new'            => _x( 'Add New', 'book', '100foldstudio' ),
+		'add_new'            => _x( 'Add New', 'project', '100foldstudio' ),
 		'add_new_item'       => __( 'Add New Project', '100foldstudio' ),
 		'new_item'           => __( 'New Project', '100foldstudio' ),
 		'edit_item'          => __( 'Edit Project', '100foldstudio' ),
