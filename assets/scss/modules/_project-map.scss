@@ -1,0 +1,87 @@
+// Define Map Style Variables
+$map_marker_height: 28px;
+$marker_flag_height: 10px;
+
+.map-marker {
+    height: $map_marker_height;
+    font-family: "Century Gothic W01";
+    font-weight: bold;
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    background: $secondary_color;
+    padding: 3px 5px 3px 5px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    
+    &:before {
+        content: ' ';
+        height: 0;
+        width: 0;
+        border: 10px solid transparent; /* arrow size */
+        
+        border-top-color: $secondary_color;  /* arrow color */
+
+        /* positioning */
+        position: absolute;
+        top: $map_marker_height;
+        left: $marker_flag_height;
+        z-index: 2;
+    }
+    
+    // Scroll Marker Content on Hover and Active
+    &:hover, &.active {
+        width: auto;
+        @include transition(.3s);
+        
+        .closed-marker {
+            display: none;
+            height: 0px;
+            width: 0px;
+        }
+        
+        .open-marker {
+            display: block;
+        }
+    }
+    
+    .marker-content-container {
+        overflow: hidden;
+    }
+    
+    .open-marker, .closed-marker {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    
+    .open-marker {
+        display: none;
+    }
+    
+    .closed-marker {
+        display: block;
+    }
+}
+
+.project-map-modal-container {
+    > img {
+        background: $secondary_color;
+        padding: 8px;
+        width: 28px;
+    }
+    
+    .project-map-modal {
+        width: 320px;
+        max-height: 400px;
+
+        img {
+            max-width: 100% !important;
+        }
+
+        .column {
+            padding: 5px;
+        }
+    }
+}

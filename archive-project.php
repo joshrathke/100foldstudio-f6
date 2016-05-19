@@ -4,14 +4,22 @@
  *  Project Archive Template
  *  This is the template used to display
  *  all of the projects.
- *
- *  Template Name: Project Archive
  */
 
 get_header(); ?>
 
-<script type="text/javascript" src="https://maps.google.com/maps/api/js"></script>
-<script type="text/javascript" src="<?php echo get_bloginfo( 'template_directory' ); ?>/assets/javascript/custom/infobox.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4qA8LbOKpoFeaT5a_zCTqDVgW4O-gZRY"></script>
+<script type="text/javascript" src="<?php echo get_bloginfo( 'template_directory' ); ?>/assets/javascript/infobox.js"></script>
+
+<?php 
+// Register the script
+wp_register_script( 'project-archive-map', get_bloginfo( 'template_directory' ) . '/assets/javascript/project-archive-map.js' );
+// Enqueued script with localized data.
+wp_enqueue_script( 'project-archive-map' );
+// Localize Script to Store Data in for Javascript
+localize_map_data(); 
+// Localize site url for use with javascript
+wp_localize_script('project-archive-map', 'site_url', array( 'site_url' => get_option('siteurl') ));?>
 
 
 <div id="projects-map"></div>
@@ -52,6 +60,7 @@ if( have_rows('project_classification_order', 'option') ):
                 $the_query->the_post();
                 
                 echo '<div class="column">';
+                echo '<a href="' . get_permalink() . '">';
                 
                 if (has_post_thumbnail($post)) {
                     echo get_the_post_thumbnail($post, 'header-thumbnail');
@@ -59,6 +68,7 @@ if( have_rows('project_classification_order', 'option') ):
                     echo '<img src="http://placehold.it/640x360">';
                 }
                 echo '<h4>' . get_the_title() . '</h4>';
+                echo '</a>';
                 echo '</div>';
             }
         } else {

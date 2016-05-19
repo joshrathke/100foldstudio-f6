@@ -1,3 +1,21 @@
+#projects-map {
+    border-bottom: 1px solid #EFEFEF;
+    height: 27rem;
+    width: 100%;
+    
+    @include breakpoint(small only) {
+        height: 20rem;
+    }
+    
+    @include breakpoint(large only) {
+        height: 30rem;
+    }
+    
+    @include breakpoint(xlarge) {
+        height: 34rem;
+    }
+}
+
 .project-archive {
     
     h4 {

@@ -1,0 +1,35 @@
+.single-project {
+    
+    h4.project-location {
+        font-size: 20px;
+        font-weight: normal;
+        margin-top: 10px;
+    }
+    
+    .project-info-container {
+        margin: 36px 0px;
+        
+        .project-info {
+
+            h4 {
+                line-height: 1;
+                margin-top: 10px;
+            }
+        }
+    }
+    
+    .more-projects-container {
+        background: #CCC;
+        margin: 40px 0px;
+        padding: 40px 0px;
+        
+        h4 {
+            font-size: 18px;
+            margin: 14px 0px 6px 0px;
+        }
+    }
+    
+    .project-donate-section {
+        text-align: center;
+    }
+}

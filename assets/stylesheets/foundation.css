@@ -6666,6 +6666,64 @@ a::after {
       .sidebar:last-child:not(:first-child) {
         float: right; } }
 
+.map-marker {
+  height: 28px;
+  font-family: "Century Gothic W01";
+  font-weight: bold;
+  position: absolute;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  background: #ff8d00;
+  padding: 3px 5px 3px 5px;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap; }
+  .map-marker:before {
+    content: ' ';
+    height: 0;
+    width: 0;
+    border: 10px solid transparent;
+    /* arrow size */
+    border-top-color: #ff8d00;
+    /* arrow color */
+    /* positioning */
+    position: absolute;
+    top: 28px;
+    left: 10px;
+    z-index: 2; }
+  .map-marker:hover, .map-marker.active {
+    width: auto;
+    transition: 0.3s; }
+    .map-marker:hover .closed-marker, .map-marker.active .closed-marker {
+      display: none;
+      height: 0px;
+      width: 0px; }
+    .map-marker:hover .open-marker, .map-marker.active .open-marker {
+      display: block; }
+  .map-marker .marker-content-container {
+    overflow: hidden; }
+  .map-marker .open-marker, .map-marker .closed-marker {
+    padding-left: 8px;
+    padding-right: 8px; }
+  .map-marker .open-marker {
+    display: none; }
+  .map-marker .closed-marker {
+    display: block; }
+
+.project-map-modal-container > img {
+  background: #ff8d00;
+  padding: 8px;
+  width: 28px; }
+
+.project-map-modal-container .project-map-modal {
+  width: 320px;
+  max-height: 400px; }
+  .project-map-modal-container .project-map-modal img {
+    max-width: 100% !important; }
+  .project-map-modal-container .project-map-modal .column, .project-map-modal-container .project-map-modal .columns {
+    padding: 5px; }
+
 .sites-button {
   background: #FF6908;
   font-size: 1.25rem;
@@ -7109,11 +7167,47 @@ h6 {
   padding-top: 100px;
   margin-bottom: 100px; }
 
+#projects-map {
+  border-bottom: 1px solid #EFEFEF;
+  height: 27rem;
+  width: 100%; }
+  @media screen and (max-width: 39.9375em) {
+    #projects-map {
+      height: 20rem; } }
+  @media screen and (min-width: 64em) and (max-width: 74.9375em) {
+    #projects-map {
+      height: 30rem; } }
+  @media screen and (min-width: 75em) {
+    #projects-map {
+      height: 34rem; } }
+
 .project-archive h4 {
   margin-top: 10px; }
 
 .project-archive h5 {
   margin: 40px 0px 20px 0px;
   text-transform: uppercase; }
+
+.single-project h4.project-location {
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 10px; }
+
+.single-project .project-info-container {
+  margin: 36px 0px; }
+  .single-project .project-info-container .project-info h4 {
+    line-height: 1;
+    margin-top: 10px; }
+
+.single-project .more-projects-container {
+  background: #CCC;
+  margin: 40px 0px;
+  padding: 40px 0px; }
+  .single-project .more-projects-container h4 {
+    font-size: 18px;
+    margin: 14px 0px 6px 0px; }
+
+.single-project .project-donate-section {
+  text-align: center; }
 
 /*# sourceMappingURL=foundation.css.map */

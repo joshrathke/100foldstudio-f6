@@ -68,12 +68,24 @@ require_once( 'library/custom_taxonomies/project_country_tax.php' ); // Project 
  *  This registers the Theme options page using the Advanced
  *  Custom Fields plugin.
  */
-if( function_exists('acf_add_options_page') ) {
 
-	acf_add_options_page( array(
-        'page_title' => 'Theme Options',
-        'icon_url'   => 'dashicons-forms',
-    ));
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-settings',
+        'icon_url'      => 'dashicons-forms',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Social Media Settings',
+		'menu_title'	=> 'Social Media',
+		'parent_slug'	=> 'theme-settings',
+	));
+	
 }
 
 /*	Function Get Excerpt By ID
