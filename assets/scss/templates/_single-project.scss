@@ -18,12 +18,35 @@
         }
     }
     
+    .content-section {
+        padding: 40px 0px;
+    }
+    
+    .back-to-projects {
+        padding: 40px 0px;
+        
+        i {
+                color: #666666;
+                font-size: 30px;
+                margin-right: 10px;
+                vertical-align: middle;
+        }
+        
+        a {
+            border-bottom: 2px solid #666666;
+            color: #666666;
+            font-family: "Century Gothic W01";
+            text-transform: uppercase;
+        }
+    }
+    
     .more-projects-container {
         background: #CCC;
         margin: 40px 0px;
         padding: 40px 0px;
         
         h4 {
+            font-family: "Century Gothic W01";
             font-size: 18px;
             margin: 14px 0px 6px 0px;
         }

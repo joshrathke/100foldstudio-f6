@@ -7,6 +7,9 @@
 
 get_header(); 
 
+// Begin the Loop
+if ( have_posts() ) : while ( have_posts() ) : the_post();
+
 // Get Gallery Images
 $gallery_images = get_field('project_images'); ?>
 
@@ -68,13 +71,19 @@ $gallery_images = get_field('project_images'); ?>
                     </div>
                 </div>
                 
-                <?php the_content(); ?>
+                <div class="content-section">
+                    <?php the_content(); ?>
+                </div>
                 
                 <div class="find-out-more">
                     <h6>Find Out More:</h6>
                     <?php echo get_field('learn_more_link'); ?>
                 </div>
                    
+                <div class="back-to-projects">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i><a href="<?php get_post_type_archive_link( 'project' ); ?>">Back To Projects</a>
+                </div>
+                
             </div>
         </div>
                         
@@ -111,4 +120,9 @@ $gallery_images = get_field('project_images'); ?>
 
 </div>
 
-<?php get_footer(); ?>
+<?php 
+
+// End Loop
+endwhile; else : endif;
+
+get_footer(); ?>

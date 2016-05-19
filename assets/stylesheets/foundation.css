@@ -7199,11 +7199,28 @@ h6 {
     line-height: 1;
     margin-top: 10px; }
 
+.single-project .content-section {
+  padding: 40px 0px; }
+
+.single-project .back-to-projects {
+  padding: 40px 0px; }
+  .single-project .back-to-projects i {
+    color: #666666;
+    font-size: 30px;
+    margin-right: 10px;
+    vertical-align: middle; }
+  .single-project .back-to-projects a {
+    border-bottom: 2px solid #666666;
+    color: #666666;
+    font-family: "Century Gothic W01";
+    text-transform: uppercase; }
+
 .single-project .more-projects-container {
   background: #CCC;
   margin: 40px 0px;
   padding: 40px 0px; }
   .single-project .more-projects-container h4 {
+    font-family: "Century Gothic W01";
     font-size: 18px;
     margin: 14px 0px 6px 0px; }
 
