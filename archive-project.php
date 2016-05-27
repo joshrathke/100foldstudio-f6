@@ -63,7 +63,7 @@ if( have_rows('project_classification_order', 'option') ):
                 echo '<a href="' . get_permalink() . '">';
                 
                 if (has_post_thumbnail($post)) {
-                    echo get_the_post_thumbnail($post, 'header-thumbnail');
+                    echo get_the_post_thumbnail($post, 'project-thumbnail');
                 } else {
                     echo '<img src="http://placehold.it/640x360">';
                 }

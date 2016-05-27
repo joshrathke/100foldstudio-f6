@@ -48,6 +48,14 @@ require_once( 'library/sticky-posts.php' );
 require_once( 'library/responsive-images.php' );
 
 /**
+ *  Register Editor Shortcodes
+ *  This registers all of the shortcodes included in the
+ *  editor-shortcodes folder.
+ */
+require_once( 'library/editor-shortcodes/shortcodes-settings.php' );
+
+
+/**
  *  Register Custom Post Types
  *  This section registers all of the custom post types we need,
  *  along with all of their functions.

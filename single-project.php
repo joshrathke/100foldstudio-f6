@@ -104,7 +104,7 @@ $gallery_images = get_field('project_images'); ?>
                     $more_projects->the_post();
 
                         echo '<div class="column">';
-                            the_post_thumbnail( 'header_thumbnail' );
+                            the_post_thumbnail( 'project-thumbnail' );
                             echo '<h4>' . get_the_title() . '</h4>';
 
                         echo '</div>';

@@ -20,6 +20,9 @@
 // Mixins
 @import "global/mixins"; // Include all mixins
 
+// Hacks
+@import "global/accordion-hacks"; // Accordion Hacks
+
 // Third-party libraries
 @import 'font-awesome';
 @import 'motion-ui';
@@ -100,3 +103,4 @@
 @import "templates/page-front";
 @import "templates/project-archive";
 @import "templates/single-project";
+@import "templates/page-demographic-landing";

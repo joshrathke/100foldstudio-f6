@@ -6,5 +6,15 @@
 		?>
 
 	<header id="featured-hero" role="banner" style="background-image: url('<?php echo $image ?>')">
+        
+        <?php
+        if (is_page_template('page-templates/page-demographic-landing.php')) : ?>
+        
+            <div class="column row dl-header-content vertical-align-relative">
+                <h1><?php the_title(); ?></h1>
+            </div>
+            
+        <?php endif ?>
+        
 	</header>
 	<?php endif;

@@ -60,6 +60,14 @@ p.wp-caption-text {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
+.accordion .accordion-title {
+  color: #444444;
+  font-size: 1rem;
+  font-weight: bold; }
+  .accordion .accordion-title i {
+    color: #7ACDD8;
+    margin-right: 10px; }
+
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -3980,34 +3988,26 @@ input[type="range"] {
 .accordion {
   list-style-type: none;
   background: #fefefe;
-  border: 1px solid #e6e6e6;
+  border: none;
   border-bottom: 0;
   border-radius: 0;
   margin-left: 0; }
 
 .accordion-title {
   display: block;
-  padding: 1.25rem 1rem;
+  padding: 0.5rem 0rem;
   line-height: 1;
   font-size: 0.75rem;
   color: #7ACDD8;
   position: relative;
-  border-bottom: 1px solid #e6e6e6; }
+  border-bottom: none; }
   .accordion-title:hover, .accordion-title:focus {
-    background-color: #e6e6e6; }
-  .accordion-title::before {
-    content: '+';
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    margin-top: -0.5rem; }
-  .is-active > .accordion-title::before {
-    content: '–'; }
+    background-color: #fefefe; }
 
 .accordion-content {
-  padding: 1rem;
+  padding: 0rem 0rem 0rem 3rem;
   display: none;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: none;
   background-color: #fefefe; }
 
 .is-accordion-submenu-parent > a {
@@ -7226,5 +7226,8 @@ h6 {
 
 .single-project .project-donate-section {
   text-align: center; }
+
+.dl-header-content h1 {
+  color: white; }
 
 /*# sourceMappingURL=foundation.css.map */
