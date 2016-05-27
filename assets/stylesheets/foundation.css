@@ -7248,4 +7248,63 @@ h6 {
 .dl-header-content h1 {
   color: white; }
 
+.personnel-profile-grid div {
+  margin-bottom: 30px; }
+  .personnel-profile-grid div > a,
+  .personnel-profile-grid div > a img {
+    border: none;
+    outline: none;
+    display: block;
+    position: relative; }
+  .personnel-profile-grid div.personnel-profile-expanded > a::after {
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: #DDDDDD;
+    border-width: 15px;
+    left: 50%;
+    bottom: -30px;
+    margin: -20px 0 0 -15px; }
+
+.personnel-profile-grid .personnel-profile-expander {
+  background: #DDDDDD;
+  margin-top: 30px;
+  padding: 30px 0px;
+  position: absolute;
+  left: 0px;
+  right: 0px; }
+  .personnel-profile-grid .personnel-profile-expander .personnel-profile-expander-inner {
+    margin: 0 auto;
+    max-width: 75rem;
+    padding: 0px 15px;
+    position: relative; }
+    .personnel-profile-grid .personnel-profile-expander .personnel-profile-expander-inner .personnel-profile-close {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 0px;
+      right: 0px;
+      cursor: pointer; }
+    .personnel-profile-grid .personnel-profile-expander .personnel-profile-expander-inner .personnel-profile-close::before,
+    .personnel-profile-grid .personnel-profile-expander .personnel-profile-expander-inner .personnel-profile-close::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      height: 1px;
+      background: #888;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg); }
+    .personnel-profile-grid .personnel-profile-expander .personnel-profile-expander-inner .personnel-profile-close::after {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+    .personnel-profile-grid .personnel-profile-expander .personnel-profile-expander-inner .personnel-profile-close:hover::before,
+    .personnel-profile-grid .personnel-profile-expander .personnel-profile-expander-inner .personnel-profile-close:hover::after {
+      background: #333; }
+
 /*# sourceMappingURL=foundation.css.map */
