@@ -51,7 +51,7 @@ if( have_rows('project_classification_order', 'option') ):
         // Query Projects in Particular Project Classificaiton
         $the_query = new WP_Query( array (
             'post_type' => 'project',
-            'project_classification' => $project_classification->slug,
+            'project_region' => $project_classification->slug,
         ));
 
         // Display Each Project
