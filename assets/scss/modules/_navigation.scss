@@ -42,21 +42,36 @@
     width: 250px;
   }
 
-  .menu a {
-    font-family:"Century Gothic W01";
-    font-size: .85rem;
-    height: 58px;
-    letter-spacing: 2px;
-    line-height: 1.5;
-    color: #777777;
-    padding-top: 0;
-    padding-bottom: 0;
-    text-transform: uppercase;
+    .menu {
+        
+        .top-bar-donate {
+            background: $primary-color;
+            
+            a {
+                color: white;
+                
+                &:hover {
+                    background-color: $primary-color !important;
+                }
+            }
+        }
+        
+      a {
+        font-family:"Century Gothic W01";
+        font-size: .85rem;
+        height: 58px;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        color: #777777;
+        padding-top: 0;
+        padding-bottom: 0;
+        text-transform: uppercase;
 
-    &:hover:not(.button) {
-      background-color: white;
+        &:hover:not(.button) {
+          background-color: white;
+        }
+      }
     }
-  }
 
   .menu>li:not(.menu-text)>a { padding: 1.2rem; }
 

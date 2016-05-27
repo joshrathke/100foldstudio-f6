@@ -23,7 +23,7 @@ h2 {
 h3 {
     color: #444444;
     font-family:"Century Gothic W01";
-    letter-spacing: .6rem;
+    letter-spacing: .4rem;
     text-transform: uppercase;
     
     @include breakpoint(medium only) {

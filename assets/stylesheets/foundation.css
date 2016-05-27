@@ -2519,10 +2519,10 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Century Gothic W01", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: 1.5;
-  color: #0a0a0a;
+  color: #333333;
   background: #fefefe;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -3352,7 +3352,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Century Gothic W01", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   color: inherit;
@@ -3464,7 +3464,7 @@ cite {
     content: '\2014 \0020'; }
 
 abbr {
-  color: #0a0a0a;
+  color: #333333;
   cursor: help;
   border-bottom: 1px dotted #0a0a0a; }
 
@@ -4186,7 +4186,7 @@ input[type="range"] {
   border: 1px solid rgba(10, 10, 10, 0.25);
   border-radius: 0;
   position: relative;
-  color: #0a0a0a;
+  color: #333333;
   background-color: white; }
   .callout > :first-child {
     margin-top: 0; }
@@ -5343,7 +5343,7 @@ table {
   table thead,
   table tfoot {
     background: #f8f8f8;
-    color: #0a0a0a; }
+    color: #333333; }
     table thead tr,
     table tfoot tr {
       background: transparent; }
@@ -6480,6 +6480,12 @@ table.hover tr:nth-of-type(even):hover {
     color: #B9B9B9;
     line-height: 1;
     width: 250px; }
+  .top-bar .menu .top-bar-donate {
+    background: #7ACDD8; }
+    .top-bar .menu .top-bar-donate a {
+      color: white; }
+      .top-bar .menu .top-bar-donate a:hover {
+        background-color: #7ACDD8 !important; }
   .top-bar .menu a {
     font-family: "Century Gothic W01";
     font-size: .85rem;
@@ -6519,6 +6525,7 @@ a::after {
     font-weight: 700;
     font-size: 18px;
     letter-spacing: 6px;
+    margin-bottom: 16px;
     text-transform: uppercase; }
   #footer-container .follow-button {
     border: 1px solid white;
@@ -6675,7 +6682,7 @@ a::after {
   cursor: pointer;
   font-size: 14px;
   background: #ff8d00;
-  padding: 3px 5px 3px 5px;
+  padding: 3px 0px;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap; }
@@ -6683,16 +6690,17 @@ a::after {
     content: ' ';
     height: 0;
     width: 0;
-    border: 10px solid transparent;
+    border: 12px solid transparent;
     /* arrow size */
     border-top-color: #ff8d00;
     /* arrow color */
     /* positioning */
     position: absolute;
     top: 28px;
-    left: 10px;
-    z-index: 2; }
+    left: 0px;
+    z-index: 6px; }
   .map-marker:hover, .map-marker.active {
+    padding: 3px 5px 3px 5px;
     width: auto;
     transition: 0.3s; }
     .map-marker:hover .closed-marker, .map-marker.active .closed-marker {
@@ -6883,7 +6891,7 @@ h2 {
 h3 {
   color: #444444;
   font-family: "Century Gothic W01";
-  letter-spacing: .6rem;
+  letter-spacing: .4rem;
   text-transform: uppercase; }
   @media screen and (min-width: 40em) and (max-width: 63.9375em) {
     h3 {
@@ -7188,6 +7196,11 @@ h6 {
   margin: 40px 0px 20px 0px;
   text-transform: uppercase; }
 
+.single-project h1 {
+  color: #444444;
+  font-size: 2rem;
+  font-weight: bold; }
+
 .single-project h4.project-location {
   font-size: 20px;
   font-weight: normal;
@@ -7198,26 +7211,31 @@ h6 {
   .single-project .project-info-container .project-info h4 {
     line-height: 1;
     margin-top: 10px; }
+  .single-project .project-info-container .project-info .project-info-content {
+    margin-top: 10px;
+    margin-bottom: 10px; }
 
 .single-project .content-section {
   padding: 40px 0px; }
 
+.single-project .find-out-more h3 {
+  display: inline;
+  font-size: 1rem; }
+
 .single-project .back-to-projects {
-  padding: 40px 0px; }
+  padding: 80px 0px 20px 0px; }
   .single-project .back-to-projects i {
     color: #666666;
-    font-size: 30px;
-    margin-right: 10px;
-    vertical-align: middle; }
+    font-size: 20px;
+    margin-right: 10px; }
   .single-project .back-to-projects a {
-    border-bottom: 2px solid #666666;
     color: #666666;
     font-family: "Century Gothic W01";
     text-transform: uppercase; }
 
 .single-project .more-projects-container {
-  background: #CCC;
-  margin: 40px 0px;
+  background: #E6E6E6;
+  margin-bottom: -40px;
   padding: 40px 0px; }
   .single-project .more-projects-container h4 {
     font-family: "Century Gothic W01";

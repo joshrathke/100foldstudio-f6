@@ -1,5 +1,11 @@
 .single-project {
     
+    h1 {
+        color: #444444;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    
     h4.project-location {
         font-size: 20px;
         font-weight: normal;
@@ -15,6 +21,11 @@
                 line-height: 1;
                 margin-top: 10px;
             }
+            
+            .project-info-content {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
         }
     }
     
@@ -22,18 +33,24 @@
         padding: 40px 0px;
     }
     
+    .find-out-more {
+        
+        h3 {
+            display: inline;
+            font-size: 1rem;
+        }
+    }
+    
     .back-to-projects {
-        padding: 40px 0px;
+        padding: 80px 0px 20px 0px;
         
         i {
                 color: #666666;
-                font-size: 30px;
+                font-size: 20px;
                 margin-right: 10px;
-                vertical-align: middle;
         }
         
         a {
-            border-bottom: 2px solid #666666;
             color: #666666;
             font-family: "Century Gothic W01";
             text-transform: uppercase;
@@ -41,8 +58,8 @@
     }
     
     .more-projects-container {
-        background: #CCC;
-        margin: 40px 0px;
+        background: #E6E6E6;
+        margin-bottom: -40px;
         padding: 40px 0px;
         
         h4 {

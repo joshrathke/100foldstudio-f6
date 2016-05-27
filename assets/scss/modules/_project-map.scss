@@ -11,7 +11,7 @@ $marker_flag_height: 10px;
     cursor: pointer;
     font-size: 14px;
     background: $secondary_color;
-    padding: 3px 5px 3px 5px;
+    padding: 3px 0px;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
@@ -20,19 +20,20 @@ $marker_flag_height: 10px;
         content: ' ';
         height: 0;
         width: 0;
-        border: 10px solid transparent; /* arrow size */
+        border: 12px solid transparent; /* arrow size */
         
         border-top-color: $secondary_color;  /* arrow color */
 
         /* positioning */
         position: absolute;
         top: $map_marker_height;
-        left: $marker_flag_height;
-        z-index: 2;
+        left: 0px;
+        z-index: 6px;
     }
     
     // Scroll Marker Content on Hover and Active
     &:hover, &.active {
+        padding: 3px 5px 3px 5px;
         width: auto;
         @include transition(.3s);
         

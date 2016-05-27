@@ -131,7 +131,7 @@ function initialize() {
          content: contentString,
         disableAutoPan: false,
         maxWidth: 0,
-        pixelOffset: new google.maps.Size(20, -43),
+        pixelOffset: new google.maps.Size(10, -43),
         zIndex: null,
         boxClass: "project-map-modal-container",
         closeBoxMargin: "5px",
@@ -170,7 +170,7 @@ function CustomMarker(latlng, map, args) {
             }
             
             if (typeof(self.args.project_count) !== 'undefined') {
-                var marker_string = '<div class="marker-content-container"><div class="closed-marker">' + self.args.project_count + ' Projects</div><div class="open-marker">' + self.args.country_name + '</div></div>';
+                var marker_string = '<div class="marker-content-container"><div class="closed-marker">' + self.args.project_count + '</div><div class="open-marker">' + self.args.country_name + '</div></div>';
                 
                 $(marker_div).html(marker_string);
             }
