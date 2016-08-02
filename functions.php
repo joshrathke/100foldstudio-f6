@@ -108,7 +108,7 @@ if( function_exists('acf_add_options_page') ) {
  *	word count to be passed to allow for excerpt length
  *	variability.
  */
-function get_excerpt_by_id( $post_id, $excerpt_length = 40, $echo_link = false, $link_text = 'View Post' )
+function get_excerpt_by_id( $post_id, $excerpt_length = 40, $echo_link = false, $link_text = ' [Read More...]' )
 {
 	$the_post = get_post( $post_id ); //Gets post ID
 	$the_permalink = get_permalink( $post_id );
@@ -117,7 +117,7 @@ function get_excerpt_by_id( $post_id, $excerpt_length = 40, $echo_link = false, 
 	$words = explode( ' ', $the_excerpt, $excerpt_length + 1 );
 	if ( count( $words ) > $excerpt_length ) :
 		array_pop( $words );
-		array_push( $words, '[…]' );
+		//array_push( $words, '[…]' );
 		$the_excerpt = implode( ' ', $words );
 		if ( $echo_link ) {
 			$the_excerpt .= "<a href='{$the_permalink}'>{$link_text}</a>";

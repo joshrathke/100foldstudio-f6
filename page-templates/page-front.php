@@ -53,7 +53,7 @@ get_header(); ?>
                 echo "<a href='{$link_url}'><img src='{$post_image}' /></a>";
                 echo $post_title ? "<a href='{$link_url}'><h4>" . $post_title . '</h4></a>' : 
                         "<a href='{$link_url}'><h4>" . get_the_title($post_id) . '</h4></a>';
-                echo get_sub_field('section_description') ? get_sub_field('section_description') : get_excerpt_by_id($post_id);
+                echo get_sub_field('section_description') ? get_sub_field('section_description') : get_excerpt_by_id($post_id, 40, true);
                 echo "<a class='button hollow secondary' href='{$link_url}'>{$link_text}</a>";
 
                 echo '</div>';
