@@ -23,6 +23,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <?php the_content(); ?>
     </div>
     
+    <?php print_r(get_field('list_personnel_based_on_status')); ?>
     
     <div id="personnel-profile-grid" class="personnel-profile-grid medium-up-4 small-up-3">
         
