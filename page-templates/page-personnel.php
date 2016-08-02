@@ -24,7 +24,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     </div>
     
     
-    <div id="personnel-profile-grid" class="personnel-profile-grid xlarge-up-5 medium-up-4 small-up-3">
+    <div id="personnel-profile-grid" class="personnel-profile-grid medium-up-4 small-up-3">
         
         <?php // Retrieve All Guest Authors
         $guest_authors = get_posts('post_type=guest-author&numberposts=-1');
