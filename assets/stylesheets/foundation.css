@@ -7209,8 +7209,10 @@ h6 {
 .single-project .project-info-container {
   margin: 36px 0px; }
   .single-project .project-info-container .project-info h4 {
+    font-weight: normal;
     line-height: 1;
-    margin-top: 10px; }
+    margin-top: 10px;
+    text-transform: uppercase; }
   .single-project .project-info-container .project-info .project-info-content {
     margin-top: 10px;
     margin-bottom: 10px; }
