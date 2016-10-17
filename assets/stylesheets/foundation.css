@@ -7764,6 +7764,14 @@ h6 {
     font-weight: 200;
     font-size: 20px; }
 
+.demographic-landing-container {
+  font-family: 'Century Gothic W01';
+  font-size: 32px;
+  font-weight: bold;
+  padding: 30px;
+  text-align: center;
+  text-transform: uppercase; }
+
 .whats-new {
   padding-top: 80px; }
   .whats-new h4 {
@@ -7867,8 +7875,14 @@ h6 {
 .single-project .project-donate-section {
   text-align: center; }
 
-.dl-header-content h1 {
-  color: white; }
+.user-demographic-header-content {
+  text-align: center; }
+  .user-demographic-header-content h1 {
+    color: white;
+    margin-bottom: 40px; }
+  .user-demographic-header-content .button {
+    border-color: white;
+    color: white; }
 
 .personnel-profile-grid div {
   margin-bottom: 30px; }

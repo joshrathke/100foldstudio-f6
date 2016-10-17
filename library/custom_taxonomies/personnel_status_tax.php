@@ -8,7 +8,7 @@ add_action( 'init', 'personnel_status_tax', 1 );
 function personnel_status_tax() {
     // Add new taxonomy, make it hierarchical (like categories)
     $labels = array(
-        'name'              => _x( 'Personnel Statuses', 'taxonomy general name' ),
+        'name'              => _x( 'Personnel Status', 'taxonomy general name' ),
         'singular_name'     => _x( 'Personnel Status', 'taxonomy singular name' ),
         'search_items'      => __( 'Search Personnel Statuses' ),
         'all_items'         => __( 'All Personnel Statuses' ),

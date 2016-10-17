@@ -29,6 +29,19 @@ get_header(); ?>
     </div>
 </div>
 
+<div class="demographic-landing-container row medium-up-3">
+    <?php
+        
+        $demographics = get_posts('post_type=user-demographic');
+        foreach ($demographics as $demographic) {
+            echo '<div class="column">';
+            echo '<a href="' . get_permalink($demographic->ID) . '">For ' . $demographic->post_title . '</a>';
+            echo '</div>';
+        }
+    
+    ?>
+</div>
+
 <div class="whats-new">
     <div class="column row">
         <?php echo '<h2>' . get_field('whats_new_section_title') . '</h2>'; ?>

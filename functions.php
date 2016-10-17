@@ -61,6 +61,7 @@ require_once( 'library/editor-shortcodes/shortcodes-settings.php' );
  *  along with all of their functions.
  */
 require_once( 'library/custom_post_types/project_cpt.php');
+require_once( 'library/custom_post_types/user_demographic_cpt.php');
 
 /**
  *  Register Custom Taxonomies
@@ -98,6 +99,12 @@ if( function_exists('acf_add_options_page') ) {
     acf_add_options_sub_page(array(
 		'page_title' 	=> 'Project Settings',
 		'menu_title'	=> 'Projects',
+		'parent_slug'	=> 'theme-settings',
+	));
+    
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'Our People Settings',
+		'menu_title'	=> 'Our People',
 		'parent_slug'	=> 'theme-settings',
 	));
 	
