@@ -91,7 +91,7 @@ get_header(); ?>
     </div>
 </div>
 
-<div class="full-width-parralax" data-parallax="scroll" data-image-src="<?php echo get_field( 'parallax_section_background_image' ); ?>">
+<div class="full-width-parallax" data-parallax="scroll" data-image-src="<?php echo get_field( 'parallax_section_background_image' ); ?>">
     <div class="row vertical-align-relative"><div class="columns small-12">
         <h2 class="parralax-heading"><?php echo get_field( 'parallax_section_phrase' ); ?></h2>
     </div></div>

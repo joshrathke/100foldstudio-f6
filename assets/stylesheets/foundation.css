@@ -64,9 +64,17 @@ p.wp-caption-text {
   color: #444444;
   font-size: 1rem;
   font-weight: bold; }
-  .accordion .accordion-title i {
+  .accordion .accordion-title .accordion-plus-button {
+    border: 1px solid #7ACDD8;
     color: #7ACDD8;
-    margin-right: 10px; }
+    font-size: 28px;
+    font-weight: normal;
+    padding: 6px;
+    position: absolute;
+    left: -40px;
+    line-height: 1rem;
+    top: 2px;
+    vertical-align: text-bottom; }
 
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -7367,7 +7375,7 @@ a::after {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 0 0 2rem;
+  margin: 0 0 4rem;
   position: relative;
   height: 18.75rem; }
 
@@ -7544,6 +7552,16 @@ h6 {
   @media screen and (min-width: 40em) and (max-width: 63.9375em) {
     h6 {
       font-size: 1rem; } }
+
+.quote {
+  border: 1px solid #CCC;
+  color: #444;
+  font-size: 24px;
+  font-style: italic;
+  padding: 50px; }
+  .quote .quote-author {
+    font-size: 16px;
+    float: right; }
 
 #page {
   max-width: 75rem;
@@ -7788,11 +7806,11 @@ h6 {
 .front-page-content-section {
   padding-top: 80px; }
 
-.full-width-parralax {
+.full-width-parallax {
   margin-top: 100px;
   background-size: cover !important;
   height: 320px; }
-  .full-width-parralax h2 {
+  .full-width-parallax h2 {
     color: white;
     text-transform: uppercase;
     text-align: center;
@@ -7882,7 +7900,15 @@ h6 {
     margin-bottom: 40px; }
   .user-demographic-header-content .button {
     border-color: white;
-    color: white; }
+    color: white;
+    margin: 0px 10px; }
+
+.impact_quote_actions {
+  margin-top: 30px; }
+
+.demographic-project-container {
+  margin: 4rem 0px;
+  padding: 4rem 0px; }
 
 .personnel-profile-grid div {
   margin-bottom: 30px; }

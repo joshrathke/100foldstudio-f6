@@ -14,8 +14,16 @@
         
             <div class="column row user-demographic-header-content vertical-align-relative">
                 <h1><?php the_title(); ?></h1>
-                <a class="button hollow">Start A Project</a>
-                <a class="button hollow">Watch A Video</a>
+                <?php // Display Action Buttons
+                if( have_rows('action_buttons') ):
+                    while ( have_rows('action_buttons') ) : the_row();
+
+                        echo '<a href="' . get_sub_field('button_url') . '" class="button hollow">';
+                        the_sub_field('button_text');
+                        echo '</a>';
+
+                    endwhile;
+                endif; ?>
             </div>
             
         <?php endif ?>
