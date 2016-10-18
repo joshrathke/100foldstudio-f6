@@ -32,7 +32,7 @@ get_template_part( 'template-parts/featured-image' ); ?>
 
 
 <div class="row demographic-project-container">
-    <div class="medium-10 medium-centered columns">
+    <div class="medium-10 small-centered columns">
         
         <?php // Start Block Grid
         echo '<div class="row medium-up-4">';
@@ -78,7 +78,7 @@ get_template_part( 'template-parts/featured-image' ); ?>
 </div>
 
 
-<div class="row">
+<div class="row action-plan-container">
     <div class="medium-8 small-centered columns">
     <?php // Display Action Buttons
     if( have_rows('action_plan') ):
