@@ -7359,6 +7359,26 @@ a::after {
   .project-map-modal-container .project-map-modal .column, .project-map-modal-container .project-map-modal .columns {
     padding: 5px; }
 
+.orbit-slide .slide-content {
+  position: absolute;
+  top: 40%;
+  right: 0px;
+  left: 0px;
+  z-index: 999; }
+
+.orbit-bullets {
+  position: relaive;
+  text-align: right;
+  top: -90px; }
+  .orbit-bullets button {
+    border-radius: 999px;
+    height: 150px;
+    margin-left: 20px;
+    overflow: hidden;
+    width: 150px; }
+    .orbit-bullets button.is-active {
+      border: 4px solid white; }
+
 .sites-button {
   background: #FF6908;
   font-size: 1.25rem;

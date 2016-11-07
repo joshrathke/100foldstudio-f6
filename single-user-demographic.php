@@ -71,10 +71,67 @@ get_template_part( 'template-parts/featured-image' ); ?>
     </div>
 </div>
 
-<div class="full-width-parallax clearfix" data-parallax="scroll" data-image-src="<?php echo get_field( 'demographic_parallax_image' ); ?>">
-    <div class="row vertical-align-relative"><div class="columns small-12">
-        <h2 class="parralax-heading">testing</h2>
-    </div></div>
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+  <ul class="orbit-container">
+    <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+    <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+    
+      
+      <?php
+      
+        // check if the repeater field has rows of data
+        if( have_rows('slides') ):
+        $slide_index = 0;
+            // loop through the rows of data
+            while ( have_rows('slides') ) : the_row(); ?>
+                <li class="orbit-slide">
+                  <img class="orbit-image" src="<?php echo get_sub_field('slide_image')['sizes']['header-image']; ?>" alt="Space">
+                    <div class="slide-content row">
+                        <div class="small-10 small-centered columns">
+                            <h6><?php echo get_sub_field('slide_description'); ?></h6>
+                        </div>
+                    </div>
+                </li>
+            
+            <?php
+            // Increment Slide Index
+            $slide_index++;
+            endwhile;
+
+        else :
+
+            // no rows found
+
+        endif;
+      
+      ?>
+  </ul>
+  <nav class="orbit-bullets column row">
+      
+      <?php
+      
+        // check if the repeater field has rows of data
+        if( have_rows('slides') ):
+        $slide_index = 0;
+            // loop through the rows of data
+            while ( have_rows('slides') ) : the_row(); ?>
+                <button data-slide="<?php echo $slide_index; ?>" class="<?php echo $slide_index == 0 ? 'is-active' : null; ?>">
+                    <img src="<?php echo get_sub_field('slide_image')['sizes']['thumbnail']; ?>" />
+                </button>
+      
+            <?php
+            // Increment Slide Index
+            $slide_index++;
+            endwhile;
+
+        else :
+
+            // no rows found
+
+        endif;
+      
+      ?>
+  </nav>
 </div>
 
 

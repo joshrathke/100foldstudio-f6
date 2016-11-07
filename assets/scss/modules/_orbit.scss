@@ -1,0 +1,25 @@
+.orbit-slide {
+    .slide-content {
+        position: absolute;
+        top: 40%;
+        right: 0px;
+        left: 0px;
+        z-index: 999;
+    }
+}
+
+.orbit-bullets {
+    position: relaive;
+    text-align: right;
+    top: -90px;
+    button {
+        border-radius: 999px;
+        height: 150px;
+        margin-left: 20px;
+        overflow: hidden;
+        width: 150px;
+        &.is-active {
+            border: 4px solid white;
+        }
+    }
+}

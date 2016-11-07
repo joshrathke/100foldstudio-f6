@@ -14,11 +14,11 @@ $tw_access_token = get_field( 'access_token', 'option' );
 $tw_access_token_secret = get_field( 'access_token_secret', 'option' );
 
 /** Add Twitter OAuth PHP Plugin **/
-require_once "library/twitteroauth/autoload.php";
-use Abraham\TwitterOAuth\TwitterOAuth;
+//require_once "library/twitteroauth/autoload.php";
+//use Abraham\TwitterOAuth\TwitterOAuth;
 
-$connection = new TwitterOAuth($tw_consumer_key, $tw_consumer_secret, $tw_access_token, $tw_access_token_secret);
-$tweets = $connection->get("statuses/user_timeline", array("count" => 3, "exclude_replies" => true));
+//$connection = new TwitterOAuth($tw_consumer_key, $tw_consumer_secret, $tw_access_token, $tw_access_token_secret);
+//$tweets = $connection->get("statuses/user_timeline", array("count" => 3, "exclude_replies" => true));
 
 ?>
 
