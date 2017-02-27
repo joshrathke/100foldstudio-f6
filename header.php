@@ -28,7 +28,10 @@
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
     <div data-sticky-container>
-	<header id="masthead" class="site-header" role="banner" data-sticky data-options="marginTop:0;" style="width:100%">
+	<header id="masthead" class="site-header sticky" role="banner" data-sticky data-margin-top="0" style="width:100%">
+        
+        <?php do_action( 'foundationpress_before_title_bar' ); ?>
+        
 		<div class="title-bar" data-responsive-toggle="site-navigation">
 			<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
 			<div class="title-bar-title">

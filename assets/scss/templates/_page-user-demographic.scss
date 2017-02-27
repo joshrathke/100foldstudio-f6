@@ -13,8 +13,37 @@
     }
 }
 
+.read-more-container {
+    margin-top: 80px;
+}
+
+.notable-clients-bar {
+    background: #EFEFEF;
+    min-height: 120px;
+    margin-top: -64px;
+    margin-bottom: 64px;
+    
+    img {
+        opacity: .60;
+    }
+}
+
 .action-plan-container {
     margin-top: rem_calc(64);
+    margin-bottom: rem_calc(64);
+    
+    h3 {
+        border-bottom: 1px solid #DFDFDF;
+        padding-bottom: 20px;
+        .button {
+            float: right;
+            vertical-align: text-top;
+        }
+    }
+    
+    .accordion-content {
+        padding: 0px;
+    }
 }
 
 .impact_quote_actions {

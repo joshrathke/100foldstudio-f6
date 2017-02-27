@@ -28,14 +28,15 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     
     <?php 
     // check if the repeater field has rows of data
-    if( have_rows('personnel_status_sort_order', 'option') ):
+    if( have_rows('list_personnel_based_on_status') ):
     
         // loop through the rows of data
-        while ( have_rows('personnel_status_sort_order', 'option') ) : the_row();
+        while ( have_rows('list_personnel_based_on_status') ) : the_row();
             echo '<div id="personnel-profile-grid" class="personnel-profile-grid medium-up-4 small-up-3">';
     
             // display a sub field value
-            $personnel_status = get_sub_field('personnel_status');
+            $personnel_status = get_sub_field('related_status');
+    print_r($personnel_status);
             $personnel_status_object = get_term($personnel_status);
             
             echo "<h2>{$personnel_status_object->name}</h2>";
@@ -67,7 +68,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($guest_author->ID), 'full' )[0];
                     $thumb_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($guest_author->ID), 'medium' )[0];
 
-                    echo "<div class='column'><a href='#_' data-largesrc='{$full_image_url}' data-title='{$display_name}' data-description='{$author_bio}'><img src='{$thumb_image_url}' /></a></div>";
+                    echo "<div class='column'><a href='#_' data-large-src='{$full_image_url}' data-title='{$display_name}' data-description='{$author_bio}'><img src='{$thumb_image_url}' /></a></div>";
                 }
                 wp_reset_postdata();
             } else {

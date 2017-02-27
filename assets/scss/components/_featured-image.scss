@@ -36,3 +36,13 @@
         height: rem-calc(550);
     }
 }
+
+#featured-hero, .fsv-container {
+    .button {
+        &:hover {
+            background: white;
+            border: 1px solid white;
+            color: #444;
+        }
+    }
+}

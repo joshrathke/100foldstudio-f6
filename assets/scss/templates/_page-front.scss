@@ -67,6 +67,12 @@
                 font-family:'Century Gothic W01';
               font-size: 18px;
               padding: 8px 24px;
+                
+                &:hover {
+                    background: white;
+                    border: 1px solid white;
+                    color: #444;
+                }
             }
         }
     }
@@ -95,29 +101,15 @@
     text-transform: uppercase;
 }
 
-.whats-new {
-    padding-top: 80px;
+
+.our-method-container {
+    margin: 130px 0px;
     
-    h4 {
-        margin-top: 20px;
-    }
-    
-    .section-container {
-        padding-bottom: 60px;
-        position: relative;
-    
-        .button {
-            position: absolute;
-            bottom: 0px;
-            right: .9375rem;
-            left: .9375rem;
-        }
+    .method-callout {
+        font-size: 56px;
     }
 }
 
-.front-page-content-section {
-    padding-top: 80px;
-}
 
 // Full Width Parallax Section
 .full-width-parallax {

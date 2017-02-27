@@ -13,6 +13,51 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 // Include Featured Image
 get_template_part( 'template-parts/featured-image' ); ?>
 
+
+<?php
+
+// check if the repeater field has rows of data
+if( have_rows('client') ):
+    
+    // Count number of clients
+    $clients = count(get_field('client'));
+    $current_client = 1;
+
+    // Assign Column Width Based on Clients
+    $column_width = $clients <= 6 ? 2 : 1;
+    $row_offset = (12 - ($column_width * $clients))/2;
+
+    echo '<div class="notable-clients-bar">';
+    echo '<div class="row" data-equalizer data-equalize-on="medium">';
+
+ 	// loop through the rows of data
+    while ( have_rows('client') ) : the_row();
+
+        $client_url = get_sub_field('client_url');
+        $offset = $current_client == 1 ? 'medium-offset-' . $row_offset : '';
+        $last_client = $clients == $current_client ? true : false;
+        $last_column = $last_client ? 'end' : '';
+        
+        echo '<div class="medium-2 columns ' . $last_column . ' ' . $offset . '" data-equalizer-watch>';
+            echo "<a href='{$client_url}'>";
+                $logo = get_sub_field('client_logo');
+                echo  '<img src="' . $logo['url'] . '" class="vertical-align-relative" />';
+            echo '</a>';
+        echo '</div>';
+
+    $current_client++;
+
+    endwhile;
+    echo '</div>';
+    echo '</div>';
+
+else :
+
+    // no rows found
+
+endif;
+?>
+
 <div class="row">
     <div class="medium-8 columns small-centered">
         <div class="quote">
@@ -30,48 +75,15 @@ get_template_part( 'template-parts/featured-image' ); ?>
     </div>
 </div>
 
-
-<div class="row demographic-project-container">
-    <div class="medium-10 small-centered columns">
-        
-        <?php // Start Block Grid
-        echo '<div class="row medium-up-4">';
-
-        // Query Projects in Particular Project Classificaiton
-        $the_query = new WP_Query( array (
-            'post_type' => 'project',
-            'posts_per_page' => 4,
-        ));
-
-        // Display Each Project
-        if ( $the_query->have_posts() ) {
-            while ( $the_query->have_posts() ) {
-                $the_query->the_post();
-                
-                echo '<div class="column">';
-                echo '<a href="' . get_permalink() . '">';
-                
-                if (has_post_thumbnail($post)) {
-                    echo get_the_post_thumbnail($post, 'project-thumbnail');
-                } else {
-                    echo '<img src="http://placehold.it/640x360">';
-                }
-                echo '<h4>' . get_the_title() . '</h4>';
-                echo '</a>';
-                echo '</div>';
-            }
-        } else {
-            // no posts found
-        }
-        /* Restore original Post Data */
-        wp_reset_postdata();
-        
-        // Close Block Grid
-        echo '</div>'; ?>
+<div class="row">
+    <div class="medium-8 columns small-centered">
+        <?php read_more_content(get_the_content()); ?>
     </div>
 </div>
 
-<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+
+
+<div class="orbit" role="region" aria-label="Projects" data-orbit>
   <ul class="orbit-container">
     <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
     <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
@@ -139,23 +151,35 @@ get_template_part( 'template-parts/featured-image' ); ?>
     <div class="medium-8 small-centered columns">
     <?php // Display Action Buttons
     if( have_rows('action_plan') ):
-        echo '<h3>Action Plan</h3>';
-        echo '<ul class="accordion clearfix" data-accordion>';
+        
+        $step_number = 1;
+        
+        echo '<h3>Action Plan<a class="button accordion-expand-all" href="#_">Expand All</a></h3>';
+        echo '<ul id="action-plan" class="accordion clearfix" data-accordion data-multi-expand="true">';
         while ( have_rows('action_plan') ) : the_row(); ?>
 
-              <li class="accordion-item" data-accordion-item>
-                <a href="#" class="accordion-title"><?php echo get_sub_field('step_title') ?></a>
+              <li class="accordion-item <?php echo $step_number == 1 ? 'is-active' : ''; ?>" data-accordion-item>
+                <a href="#_" class="accordion-title"><?php echo get_sub_field('step_title') ?></a>
                 <div class="accordion-content" data-tab-content>
                   <?php echo get_sub_field('step_description'); ?>
                 </div>
               </li>
         
-        <?php endwhile;
+        <?php 
+        $step_number++;
+        endwhile;
         echo '</ul>';
     endif; ?>
     </div>
 </div>
 
+
+<div class="row">
+    <div class="medium-8 columns medium-centered columns">
+    <h3>Get More Information</h3>
+    <?php echo do_shortcode('[gravityform id="16" title="false" description="false"]'); ?>
+    </div>
+</div>
 
 <?php 
 

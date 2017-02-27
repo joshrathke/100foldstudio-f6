@@ -74,6 +74,12 @@ require_once( 'library/custom_taxonomies/project_country_tax.php' ); // Project 
 require_once( 'library/custom_taxonomies/personnel_status_tax.php' ); // Personnel Status
 
 /**
+ *  Add Custom Actions
+ *  This adds custom actions.
+ */
+require_once( 'library/alert-banner.php' );
+
+/**
  *  Register Options Page
  *  This registers the Theme options page using the Advanced
  *  Custom Fields plugin.
@@ -89,10 +95,10 @@ if( function_exists('acf_add_options_page') ) {
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));
-	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Social Media Settings',
-		'menu_title'	=> 'Social Media',
+    
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'Alert Banner Settings',
+		'menu_title'	=> 'Alert Banner',
 		'parent_slug'	=> 'theme-settings',
 	));
     
@@ -105,6 +111,12 @@ if( function_exists('acf_add_options_page') ) {
     acf_add_options_sub_page(array(
 		'page_title' 	=> 'Our People Settings',
 		'menu_title'	=> 'Our People',
+		'parent_slug'	=> 'theme-settings',
+	));
+    
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'Social Media Settings',
+		'menu_title'	=> 'Social Media',
 		'parent_slug'	=> 'theme-settings',
 	));
 	
@@ -133,6 +145,29 @@ function get_excerpt_by_id( $post_id, $excerpt_length = 40, $echo_link = false, 
 	endif;
 	$the_excerpt = '<p>' . $the_excerpt . '</p>';
 	return $the_excerpt;
+}
+
+function read_more_content($content) {
+    $read_more_content = preg_split('/<span id\=\"(more\-\d+)"><\/span>/', $content);
+    
+    if (isset($read_more_content)) { ?>
+        
+        <div class="read-more-container">
+            <div class="read-more-exceprt">
+                <?php echo wpautop($read_more_content[0]); ?>
+                <a href="#_" class="read-more-link">Continue Reading...</a>
+            </div>
+            <div class="read-more-content">
+                <?php for($i=1; $i<=count($read_more_content)-1; $i++) {
+                    echo wpautop($read_more_content[$i]);
+                } ?>
+            </div>
+        </div>
+
+    <?php } else {
+        the_content();
+    }
+
 }
 
 ?>

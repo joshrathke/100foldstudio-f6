@@ -7,59 +7,77 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
-
-$tw_consumer_key = get_field( 'consumer_key', 'option' );
-$tw_consumer_secret = get_field( 'consumer_secret', 'option' );
-$tw_access_token = get_field( 'access_token', 'option' );
-$tw_access_token_secret = get_field( 'access_token_secret', 'option' );
-
-/** Add Twitter OAuth PHP Plugin **/
-//require_once "library/twitteroauth/autoload.php";
-//use Abraham\TwitterOAuth\TwitterOAuth;
-
-//$connection = new TwitterOAuth($tw_consumer_key, $tw_consumer_secret, $tw_access_token, $tw_access_token_secret);
-//$tweets = $connection->get("statuses/user_timeline", array("count" => 3, "exclude_replies" => true));
-
 ?>
 
 </section>
+        
+        <div class="demographic-footer">
+            <div class="row">
+                <?php
+                // Get demographics and display links to them.
+                $demographics = get_posts(array('post_type' => 'user-demographic'));
+                
+                foreach ($demographics as $demographic) {
+                    echo '<div class="medium-4 columns demographic-link">';
+                        echo '<a href="' . get_permalink($demographic->ID) . '">';
+                        echo $demographic->post_title;
+                        echo '</a>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
+        </div>
 
 		<div id="footer-container">
 			<footer id="footer">
-				<?php do_action( 'foundationpress_before_footer' ); ?>
-				
-                <div class="row">
-                    <div class="columns medium-4">
-                        <h5>Twitter<div class="follow-button"><a href="https://twitter.com/100foldstudio">Follow</a></div></h5>
-
-                        <?php
-                        // Print Tweets
-                        foreach($tweets as $tweet) :
-                            echo '<div class="tweet">';
-                                echo $tweet->text;
-                            echo '</div>';
-                        endforeach ?>
-
+				<div class="row">
+                    <div class="medium-3 columns">
+                        <img src="<?php echo get_bloginfo('template_url'); ?>/assets/images/gray_on_white_linear.png" />
+                        <div class="contact-info">
+                            <ul>
+                                <li>100 Fold Studio</li>
+                                <li>501 Blacktail Rd.</li>
+                                <li>Lakeside MT, 59922</li>
+                                <li></li>
+                                <li>Copyright 2017</li>
+                            </ul>
+                        </div>
                     </div>
-                    
-                    <div class="columns medium-4">
-                    <h5>Connect</h5>
-                        <?php echo do_shortcode('[gravityform id="1" title="false" description="false"]'); ?>
+                    <div class="medium-3 columns twitter-feed">
+                        <h6>Twitter</h6>
+                        <div class="tweet">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed enim id ligula volutpat vulputate.
+                        </div>
+                        <div class="tweet">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed enim id ligula volutpat vulputate.
+                        </div>
+                        <div class="tweet">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed enim id ligula volutpat vulputate.
+                        </div>
                     </div>
-
-                    <div class="columns medium-4 join-us">
-                        <h5>Join Us</h5>
-                        <?php _100foldstudio_join_us_nav(); ?>
+                    <div class="medium-6 columns instagram-feed">
+                        <h6>Instagram</h6>
+                        <div class="row medium-up-6">
+                            <div class="column column-block"><img src="http://placehold.it/150x150" /></div>
+                            <div class="column column-block"><img src="http://placehold.it/150x150" /></div>
+                            <div class="column column-block"><img src="http://placehold.it/150x150" /></div>
+                            <div class="column column-block"><img src="http://placehold.it/150x150" /></div>
+                            <div class="column column-block"><img src="http://placehold.it/150x150" /></div>
+                            <div class="column column-block"><img src="http://placehold.it/150x150" /></div>
+                            <div class="column column-block"><img src="http://placehold.it/150x150" /></div>
+                            <div class="column column-block"><img src="http://placehold.it/150x150" /></div>
+                            <div class="column column-block"><img src="http://placehold.it/150x150" /></div>
+                            <div class="column column-block"><img src="http://placehold.it/150x150" /></div>
+                            <div class="column column-block"><img src="http://placehold.it/150x150" /></div>
+                            <div class="column column-block"><img src="http://placehold.it/150x150" /></div>
+                        </div>
                     </div>
                 </div>
-                
-				<?php do_action( 'foundationpress_after_footer' ); ?>
 			</footer>
-            
-            <div class="footer-sub-menu">
-                <?php _100foldstudio_copyright_bar_nav(); ?>    
-            </div>
 		</div>
+        <div class="footer-sub-menu">
+            <?php _100foldstudio_copyright_bar_nav(); ?>    
+        </div>
 
 		<?php do_action( 'foundationpress_layout_end' ); ?>
 
