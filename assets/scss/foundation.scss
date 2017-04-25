@@ -13,6 +13,8 @@
 // Foundation mixins & browser resets
 @import '../components/foundation-sites/scss/foundation';
 
+@import 'global/site'; // Sitewide settings file.
+
 // WP overrides
 @import "global/wp-admin"; // Fix issues with wp-admin bar positioning
 @import "global/wp-overrides"; // Override the default WordPress styling for some elements

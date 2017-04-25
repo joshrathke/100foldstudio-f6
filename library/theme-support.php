@@ -48,6 +48,28 @@ function foundationpress_theme_support() {
         return array_merge($sizes, $custom_sizes);
     }
 
+	// Remove Content Editor on certain page templates
+	add_action( 'admin_head', 'hide_editor' );
+	function hide_editor() {
+		// Get the Post ID.
+		$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+		if( !isset( $post_id ) ) return;
+
+		// Hide the editor on a page with a specific page template
+		// Get the name of the Page Template file.
+		$template_file = substr( get_page_template(), strrpos( get_page_template(), '/' ) + 1 );
+		if($template_file == 'page-pray-with-us.php'){ // the filename of the page template
+			remove_post_type_support('page', 'editor');
+		}
+	}
+
+	// Remove Authors from pages
+	function hide_author_on_pages() {
+		remove_meta_box( 'commentsdiv', 'page', 'normal' );
+		remove_meta_box( 'commentstatusdiv', 'page', 'normal' );
+	}
+	add_action( 'admin_menu', 'hide_author_on_pages' );
+
 	// RSS thingy
 	add_theme_support( 'automatic-feed-links' );
 

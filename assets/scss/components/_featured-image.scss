@@ -45,4 +45,31 @@
             color: #444;
         }
     }
+
+	.fih-form-container {
+		padding-top: 30px;
+
+		p {
+			font-size: 18px;
+		}
+
+		form {
+			background: rgba(255, 255, 255, 0.65);
+			padding: 10px 25px;
+
+			label {
+				display: none;
+			}
+
+			.gfield_checkbox li {
+				input {
+					margin-top: 20px;
+				}
+
+				label {
+					display: inline-block !important;
+				}
+			}
+		}
+	}
 }

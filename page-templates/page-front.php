@@ -5,23 +5,6 @@
 
 get_header(); ?>
 
-<div class="fsv-container">
-    <div class="full-screen-video">
-
-        <div class="fsv-content-container" data-magellan>
-            <img src="<?php echo get_bloginfo('template_url'); ?>/assets/images/100foldstudio_logo_thick.png" />
-            <?php echo get_field('header_tagline'); ?>
-            <a href="#<?php echo get_field( 'header_link_destination' ); ?>">Learn More</a>
-        </div>
-        
-        <video autoplay loop muted>
-          <source src="http://localhost:8888/100foldstudio.org/wp-content/uploads/2015/09/homepage_walking_through_dadeldhura.mov" type="video/mp4">
-          <source src="movie.ogg" type="video/ogg">
-        Your browser does not support the video tag.
-        </video>
-    </div>
-</div>
-
 <div class="row">
     <div class="medium-10 columns medium-centered opening-statement">
         <?php echo '<h1>' . get_field('opening_statement_title') . '</h1>'; ?>
@@ -199,15 +182,6 @@ get_header(); ?>
         </div>
         
     </div>
-</div>
-
-
-
-
-<div class="full-width-parallax" data-parallax="scroll" data-image-src="<?php echo get_field( 'parallax_section_background_image' ); ?>">
-    <div class="row vertical-align-relative"><div class="columns small-12">
-        <h2 class="parralax-heading"><?php echo get_field( 'parallax_section_phrase' ); ?></h2>
-    </div></div>
 </div>
 
 <div class="row project-description">

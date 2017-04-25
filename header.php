@@ -60,5 +60,43 @@
 	</header>
     </div>
 
+
+
+	<?php
+	/*
+	*  Insert Front Page Video if Enabled
+	*  This section includes the featured video on the front page
+	*  if the option has been enabled.
+	*/
+	
+	if (get_field('fsv_enable')) { ?>
+
+	<div class="fsv-container">
+		<div class="full-screen-video">
+
+			<div class="fsv-content-container" data-magellan>
+				<img src="<?php echo get_bloginfo('template_url'); ?>/assets/images/100foldstudio_logo_thick.png" />
+				<?php echo get_field('header_tagline'); ?>
+				<a href="#<?php echo get_field( 'header_link_destination' ); ?>">Learn More</a>
+			</div>
+			
+			<?php
+
+			// Retrieve Video File
+			$mp4_video_file = get_field('fsv_mp4_file_upload');
+
+			echo '<video autoplay loop muted>';
+				// If video file exists, install it.
+				if ( $mp4_video_file ) { echo "<source src='{$mp4_video_file}' type='video/mp4'"; }
+			echo '</video>';
+			?>
+
+		</div>
+	</div>
+	<?php } // End If FSV enabled statement?>
+
+
+
+
 	<section class="container">
 		<?php do_action( 'foundationpress_after_header' );

@@ -23,23 +23,25 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <?php the_content(); ?>
     </div>
     
-    <?php print_r(get_field('list_personnel_based_on_status')); ?>
-    
     
     <?php 
     // check if the repeater field has rows of data
     if( have_rows('list_personnel_based_on_status') ):
-    
+
+        echo '<div class="row">';
+        echo '<ul id="og-grid" class="og-grid">';
+
         // loop through the rows of data
         while ( have_rows('list_personnel_based_on_status') ) : the_row();
-            echo '<div id="personnel-profile-grid" class="personnel-profile-grid medium-up-4 small-up-3">';
+        // display a sub field value
+        $personnel_status = get_sub_field('related_status');
+        $personnel_status_object = get_term($personnel_status);
+        
+        echo "<li class='personnel-status-title'><h2>{$personnel_status_object->name}</h2></li>";
     
             // display a sub field value
             $personnel_status = get_sub_field('related_status');
-    print_r($personnel_status);
             $personnel_status_object = get_term($personnel_status);
-            
-            echo "<h2>{$personnel_status_object->name}</h2>";
     
             $args = array(
             'post_type'   => 'guest-author',
@@ -63,20 +65,28 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     $coauthor_object = get_coauthors($post->ID);
 
                     // Build Variables for Author Profile
-                    $display_name = $guest_author->post_title;
+                    $display_name = $coauthor_object[0]->display_name;
                     $author_bio = $coauthor_object[0]->description;
-                    $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($guest_author->ID), 'full' )[0];
+                    $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($guest_author->ID), 'large' )[0];
                     $thumb_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($guest_author->ID), 'medium' )[0];
 
-                    echo "<div class='column'><a href='#_' data-large-src='{$full_image_url}' data-title='{$display_name}' data-description='{$author_bio}'><img src='{$thumb_image_url}' /></a></div>";
+                    echo "<li>";
+                        echo "<a href='#_' data-largesrc='{$full_image_url}' data-title='{$display_name}' data-description='{$author_bio}'>";
+                            echo "<img src='{$thumb_image_url}' />";
+                        echo "</a>"; ?>
+
+                        <?php
+                    echo "</li>";
                 }
                 wp_reset_postdata();
             } else {
                 // no posts found
             }
-    
-        echo '</div>';
         endwhile;
+
+        echo '</ul';
+        echo '</div>';
+        echo '</div>';
 
     else :
 
@@ -88,9 +98,11 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <script src="<?php echo get_bloginfo('template_directory'); ?>/assets/javascript/personnel-modernizr.js"></script>
     <script src="<?php echo get_bloginfo('template_directory'); ?>/assets/javascript/personnel-list.js"></script>
     <script>
+    $(document).ready(function() {
         $(function() {
             Grid.init();
         });
+    });
     </script>
 
 

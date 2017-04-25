@@ -162,11 +162,12 @@ $.fn.imagesLoaded = function( callback ) {
 };
 
 var Grid = (function() {
-
+		// grid selector
+		var $selector = '#og-grid', 
 		// list of items
-	var $grid = $( '#personnel-profile-grid' ),
+		$grid = $( $selector ),
 		// the items
-		$items = $grid.children( 'div' ),
+		$items = $grid.children( 'li' ),
 		// current expanded item's index
 		current = -1,
 		// position (top) of the expanded item
@@ -191,16 +192,16 @@ var Grid = (function() {
 		support = Modernizr.csstransitions,
 		// default settings
 		settings = {
-			minHeight : 350,
+			minHeight : 500,
 			speed : 350,
-			easing : 'ease'
+			easing : 'ease',
+			showVisitButton : true
 		};
 
 	function init( config ) {
 		
 		// the settings..
 		settings = $.extend( true, {}, settings, config );
-
 		// preload all images
 		$grid.imagesLoaded( function() {
 
@@ -271,7 +272,7 @@ var Grid = (function() {
 	}
 
 	function initItemsEvents( $items ) {
-		$items.on( 'click', 'span.personnel-profile-close', function() {
+		$items.on( 'click', 'span.og-close', function() {
 			hidePreview();
 			return false;
 		} ).children( 'a' ).on( 'click', function(e) {
@@ -344,13 +345,17 @@ var Grid = (function() {
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$href = $( '<a href="#">Visit website</a>' );
-			this.$details = $( '<div class="personnel-profile-details medium-8 columns"></div>' ).append( this.$title, this.$description, this.$href );
-			this.$loading = $( '<div class="personnel-profile-loading"></div>' );
-			this.$fullimage = $( '<div class="personnel-profile-fullimg medium-4 columns"></div>' ).append( this.$loading );
-			this.$closePreview = $( '<span class="personnel-profile-close"></span>' );
-			this.$previewInner = $( '<div class="personnel-profile-expander-inner row" style="display: block;"></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
-			this.$previewEl = $( '<div class="personnel-profile-expander"></div>' ).append( this.$previewInner );
+			var detailAppends = [this.$title, this.$description];
+			if (settings.showVisitButton === true) {
+				this.$href = $( '<a href="#">Visit website</a>' );
+				detailAppends.push(this.$href);
+			}
+			this.$details = $( '<div class="og-details"></div>' ).append(detailAppends);
+			this.$loading = $( '<div class="og-loading"></div>' );
+			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
+			this.$closePreview = $( '<span class="og-close"></span>' );
+			this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
+			this.$previewEl = $( '<div class="og-expander"></div>' ).append( this.$previewInner );
 			// append preview element to the item
 			this.$item.append( this.getEl() );
 			// set the transitions for the preview and the item
@@ -364,11 +369,11 @@ var Grid = (function() {
 				this.$item = $item;
 			}
 			
-			// if already expanded remove class "personnel-profile-expanded" from current item and add it to new item
+			// if already expanded remove class "og-expanded" from current item and add it to new item
 			if( current !== -1 ) {
 				var $currentItem = $items.eq( current );
-				$currentItem.removeClass( 'personnel-profile-expanded' );
-				this.$item.addClass( 'personnel-profile-expanded' );
+				$currentItem.removeClass( 'og-expanded' );
+				this.$item.addClass( 'og-expanded' );
 				// position the preview correctly
 				this.positionPreview();
 			}
@@ -387,7 +392,9 @@ var Grid = (function() {
 
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
-			this.$href.attr( 'href', eldata.href );
+			if (settings.showVisitButton === true) {
+				this.$href.attr( 'href', eldata.href );
+			}
 
 			var self = this;
 			
@@ -429,7 +436,7 @@ var Grid = (function() {
 					if( support ) {
 						$( this ).off( transEndEventName );
 					}
-					self.$item.removeClass( 'personnel-profile-expanded' );
+					self.$item.removeClass( 'og-expanded' );
 					self.$previewEl.remove();
 				};
 
@@ -473,7 +480,7 @@ var Grid = (function() {
 					if( support ) {
 						self.$item.off( transEndEventName );
 					}
-					self.$item.addClass( 'personnel-profile-expanded' );
+					self.$item.addClass( 'og-expanded' );
 				};
 
 			this.calcHeight();
